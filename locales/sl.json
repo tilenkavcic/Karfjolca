@@ -20,7 +20,7 @@
 	"Go to the home page": "Pojdi domov",
 	"Recent articles": "Zadni recepti",
 	"No recent articles found :(": "Našel nisem nič receptov :(",
-	"1 min read": "1 min dolgo branje", 
+	"1 min read": "1 min dolgo branje",
 	"% min read": "% min dolgo branje",
 	"No posts": "Ni receptov",
 	"No posts found": "Ni najdenih receptov",
@@ -35,5 +35,4 @@
 	"Among with no break line": "Skupaj z ",
 	"Type to search": "Začnite tipkati za iskanje",
 	"No results for your search, try something different.": "Za vaše iskanje nismo našli rezultatov, probajte kaj drugega."
-  }
-  
+}
