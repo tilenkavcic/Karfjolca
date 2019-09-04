@@ -30,9 +30,11 @@ into the {body} of the default.hbs template --}}
             <header class="m-heading">
               <h1 class="m-heading__title in-post">{{title}}</h1>
               <div class="m-heading__meta">
-                {{#if primary_tag}}
-                <a href="{{primary_tag.url}}" class="m-heading__meta__tag">{{primary_tag.name}}</a>
-                <span class="m-heading__meta__divider">&bull;</span>
+				{{#if primary_tag}}
+					{{#foreach tags}}
+                	<a href="{{url}}" class="m-heading__meta__tag">{{name}}</a>
+                	<span class="m-heading__meta__divider">&bull;</span>
+					{{/foreach}} 
                 {{/if}}
                 <span class="m-heading__meta__time">{{date published_at}}</span>
               </div>
