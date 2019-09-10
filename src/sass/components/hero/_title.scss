@@ -2,22 +2,22 @@
   color: $titles;
   letter-spacing: 0.4px;
   line-height: 1.3;
-  font-size: 1.750rem;
+  font-size: 2rem;
   font-weight: 700;
   margin: 0 0 15px;
 
   @include respond-to('medium') {
     letter-spacing: 0.5px;
-    font-size: 2.250rem;
+    font-size: 3rem;
   }
 
   &.bigger {
     letter-spacing: 0.5px;
-    font-size: 2rem;
+    font-size: 3rem;
 
     @include respond-to('medium') {
       letter-spacing: 0.8px;
-      font-size: 3.250rem;
+      font-size: 6rem;
       margin-bottom: 10px;
     }
   }
