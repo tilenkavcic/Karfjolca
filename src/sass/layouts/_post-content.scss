@@ -102,6 +102,10 @@
     color: $black;
     text-decoration: underline;
   }
+  
+  a:hover {
+    color: $main-color;
+  }
 
   ul, ol {
     letter-spacing: 0.2px;
