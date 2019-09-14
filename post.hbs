@@ -24,18 +24,28 @@ into the {body} of the default.hbs template --}}
         <div class="l-wrapper in-post js-aos-wrapper" data-aos="fade-up" data-aos-delay="300">
           {{#if @labs.subscribers}}
           <div class="l-post-content has-subscribe-form js-progress-content">
-          {{else}}
-          <div class="l-post-content js-progress-content">
-          {{/if}}
-            <header class="m-heading">
-              <h1 class="m-heading__title in-post">{{title}}</h1>
-              <div class="m-heading__meta">
-				{{#if primary_tag}}
-					{{#foreach tags}}
-                	<a href="{{url}}" class="m-heading__meta__tag">{{name}}</a>
-                	<span class="m-heading__meta__divider">&bull;</span>
-					{{/foreach}} 
-                {{/if}}
+            {{else}}
+            <div class="l-post-content js-progress-content">
+              {{/if}}
+              <header class="m-heading">
+                <h1 class="m-heading__title in-post">{{title}}</h1>
+                <div class="m-heading__meta">
+                  <p>
+                    {{#if primary_tag}}
+                    <span class="m-heading__meta__divider">&bull;</span>
+                    {{#foreach tags}}
+                    <a href="{{url}}" class="m-heading__meta__tag">{{name}}</a>
+
+                    <span class="m-heading__meta__divider">&bull;</span>
+                    {{/foreach}}
+                    {{/if}}
+                  </p>
+                </div>
+                <div class="m-heading__meta">
+                  <a href="{{url}}amp" class="m-heading__meta__time" target="_blank" rel="noopener" aria-label="Print">
+                    <img src="{{asset "images/printer.png"}}" style="margin-bottom: 0px" width="18" alt="Print"/>
+                  </a>
+                  <span class="m-heading__meta__divider">&bull;</span>
                 <span class="m-heading__meta__time">{{date published_at}}</span>
               </div>
             </header>
