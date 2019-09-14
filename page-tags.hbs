@@ -27,16 +27,11 @@ into the {body} of the default.hbs template --}}
 					<div class="l-post-content">
 						<div class="pos-relative js-post-content">
 							{{content}}
+
 							{{#get "tags"}}
-							<ul>
 								{{#foreach tags}}
-								<li>
-									<a href="{{url}}">{{name}}</a>
-								</li>
-								{{else}}
-								<li class="m-no-found">{{t "No tags found :("}}</li>
+									<a href="{{url}}" style="text-decoration: none; font-size: 2.625rem;" class="bold">{{name}}</a><br>
 								{{/foreach}}
-							</ul>
 							{{/get}}
 						</div>
 					</div>
