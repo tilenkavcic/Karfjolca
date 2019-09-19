@@ -72,6 +72,8 @@ To get the latest version please head over the [releases page](https://github.co
 * Informal french by [v1nc3nt-fr](https://github.com/v1nc3nt-fr)
 * Portuguese by [ivomota](https://github.com/ivomota)
 * Brazilian portuguese by [pedrinholula](https://github.com/pedrinholula)
+* Russian by [stereohorse](https://github.com/stereohorse)
+* Kyrgyz by [januchaos](https://github.com/januchaos)
 
 ## Theme tested
 
@@ -100,4 +102,3 @@ Copyright (c) 2018-2019 Eduardo Gómez. Released under the [MIT license](https:/
 ## Credits
 
 All photos I used on this theme are from [Unsplash](https://unsplash.com)
-
