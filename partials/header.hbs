@@ -3,10 +3,103 @@ This header template is shared across all the pages.
 --}}
 
 {{#if background}}
-  <header class="m-header with-picture js-header">
-{{else}}
+<header class="m-header with-picture js-header">
+  {{else}}
   <header class="m-header js-header">
-{{/if}}
+    {{/if}}
+    {{!-- Cookie consent --}}
+    <link rel="stylesheet" type="text/css"
+      href="https://cdn.jsdelivr.net/npm/cookieconsent@3/build/cookieconsent.min.css" />
+    <script src="https://cdn.jsdelivr.net/npm/cookieconsent@3/build/cookieconsent.min.js" data-cfasync="false"></script>
+    <script>
+      window.cookieconsent.initialise({
+        "palette": {
+          "popup": {
+            "background": "#008736"
+          },
+          "button": {
+            "background": "#afed71"
+          }
+        },
+        "theme": "classic",
+        "position": "bottom-right",
+        "content": {
+          "message": "Ta spletna stran uporablja piškotke za interno analitiko.",
+          "dismiss": "Hvala za informacijo",
+          "link": "Več o tem",
+          "href": "https://www.karfjolca.si/privacy"
+        }
+      });
+
+      /*
+      // proper opt-out way
+      window.cookieconsent.initialise({
+        "palette": {
+          "popup": {
+            "background": "#008736",
+            "text": "#b6d1bd"
+          },
+          "button": {
+            "background": "transparent",
+            "text": "#fff",
+            "border": "#fff"
+          }
+        },
+        "position": "bottom-right",
+        "type": "opt-out",
+        "content": {
+          "message": "Ta spletna stran uporablja piškotke za interno analitiko.",
+          "allow": "Hvala za informacijo",
+          "deny": "Piškotov ne želim",
+          "link": "Več o tem",
+          "href": "https://www.karfjolca.si/privacy"
+        },
+
+        // Handle cookie rejection
+        onInitialise: function (status) {
+          var type = this.options.type;
+          var didConsent = this.hasConsented();
+          if (type == 'opt-in' && didConsent) {
+            console.log("cookies enabled");
+          }
+          if (type == 'opt-out' && !didConsent) {
+            console.log("cookies disabled");
+          }
+        },
+        onStatusChange: function (status, chosenBefore) {
+          var type = this.options.type;
+          var didConsent = this.hasConsented();
+          if (type == 'opt-in' && didConsent) {
+            console.log("cookies enabled");
+          }
+          if (type == 'opt-out' && !didConsent) {
+            console.log("cookies disabled");
+          }
+        },
+        onRevokeChoice: function () {
+          var type = this.options.type;
+          if (type == 'opt-in') {
+            console.log("cookies disabled");
+          }
+          if (type == 'opt-out') {
+            console.log("cookies enabled");
+          }
+        }
+      });
+      */
+    </script>
+
+    {{! Analytics }}
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-143383720-2"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() { dataLayer.push(arguments); }
+      gtag('js', new Date());
+      gtag('config', 'UA-143383720-2');
+    </script>
+
+
   <div class="m-mobile-topbar" data-aos="fade-down">
     <button class="m-icon-button in-mobile-topbar js-open-menu" aria-label="Open menu">
       <span class="icon-menu"></span>
