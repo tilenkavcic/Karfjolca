@@ -40,12 +40,10 @@ This header template is shared across all the pages.
             function gtag() { dataLayer.push(arguments); }
             gtag('js', new Date());
             gtag('config', 'UA-149255108-1');
-            console.log("allow");
           }
           else {
             window.dataLayer = window.dataLayer || [];
             window['ga-disable-UA-149255108-1'] = true;
-            console.log("deny");
           }
         },
         onStatusChange: function (status, chosenBefore) {
@@ -55,18 +53,15 @@ This header template is shared across all the pages.
             function gtag() { dataLayer.push(arguments); }
             gtag('js', new Date());
             gtag('config', 'UA-149255108-1');
-            console.log("allow");
           }
           else {
             window.dataLayer = window.dataLayer || [];
             window['ga-disable-UA-149255108-1'] = true;
-            console.log("deny");
           }
         },
         onRevokeChoice: function () {
             window.dataLayer = window.dataLayer || [];
             window['ga-disable-UA-149255108-1'] = true;
-            console.log("deny");
         }
       });
     </script>
