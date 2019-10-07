@@ -1,6 +1,6 @@
 # Liebling
 
-Liebling is a beautiful and clean Ghost theme that is easy and comfortable to use. **It's free** and you can use it for any kind of content you might have.
+Liebling is a beautiful and clean Ghost theme that is easy and comfortable to use. **It's free** and you can use it for any kind of content you might have. Now with dark mode 🌓!
 
 If you use it and you like it, please consider to make a donation to support its development! 🙏🏼
 
@@ -10,9 +10,9 @@ If you use it and you like it, please consider to make a donation to support its
 
 You can see a live demo here: [https://liebling.eduardogomez.io](https://liebling.eduardogomez.io)
 
-![](https://res.cloudinary.com/edev/image/upload/v1557074150/liebling/liebling-promo-ipad.jpg)
+![](https://res.cloudinary.com/edev/image/upload/v1570370297/liebling/liebling-promo-ipad.jpg)
 <br><br>
-![](https://res.cloudinary.com/edev/image/upload/v1557074150/liebling/liebling-promo-mobile.jpg)
+![](https://res.cloudinary.com/edev/image/upload/v1570370297/liebling/liebling-promo-mobile.jpg)
 
 ## Download
 
@@ -48,6 +48,7 @@ To get the latest version please head over the [releases page](https://github.co
 
 ### Liebling unique features
 
+* Dark mode
 * Search
 * Custom Subscribe page
 * Custom authors page
@@ -72,6 +73,8 @@ To get the latest version please head over the [releases page](https://github.co
 * French by [v1nc3nt-fr](https://github.com/v1nc3nt-fr)
 * Informal french by [v1nc3nt-fr](https://github.com/v1nc3nt-fr)
 * Portuguese by [ivomota](https://github.com/ivomota)
+* Arabic by [allamiro](https://github.com/allamiro)
+* Polish by [otlet](https://github.com/otlet)
 * Brazilian portuguese by [pedrinholula](https://github.com/pedrinholula)
 * Russian by [stereohorse](https://github.com/stereohorse)
 * Kyrgyz by [januchaos](https://github.com/januchaos)

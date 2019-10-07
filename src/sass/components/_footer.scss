@@ -1,6 +1,6 @@
 .m-footer {
   flex-shrink: 0;
-  background-color: $main-color;
+  background-color: var(--foter-background-color);
 }
 
 .m-footer__content {
