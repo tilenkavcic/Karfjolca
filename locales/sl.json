@@ -3,10 +3,10 @@
 	"of": "od",
 	"Published with": "Omogoča",
 	"Subscribe": "Naroči se",
-	"Subscribe to": "Naroči se na",
-	"Subscribed!": "Ste naročeni!",
+	"Subscribe to": "Naj vam pošto bogati",
+	"Subscribed!": "Naročen!",
 	"Subscribe to our newsletter": "Naroči se na naše recepte",
-	"You've successfully subscribed to": "Uspešno se ste naročili na",
+	"You've successfully subscribed to": "Uspešno ste se naročili na",
 	"Your email address": "Vaša elektronska pošta",
 	"with the email address": "z elektronsko pošto",
 	"Email cannot be blank.": "Elektronska pošta ne sme biti prazna.",
@@ -34,5 +34,6 @@
 	"Among with": "<br>Skupaj z ",
 	"Among with no break line": "Skupaj z ",
 	"Type to search": "Začnite tipkati za iskanje",
-	"No results for your search, try something different.": "Za vaše iskanje nismo našli rezultatov, probajte kaj drugega."
+	"No results for your search, try something different.": "Za vaše iskanje nismo našli rezultatov, probajte kaj drugega.",
+	"JavaScript license information": "Licence"
 }
