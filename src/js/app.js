@@ -4,11 +4,13 @@ import lozad from 'lozad'
 import Headroom from "headroom.js"
 import slick from 'slick-carousel'
 import tippy from 'tippy.js'
+import shave from 'shave'
 import AOS from 'aos'
 import Fuse from 'fuse.js'
 import {
   isRTL,
-  formatDate
+  formatDate,
+  isDarkMode
 } from './helpers'
 
 cssVars({})
@@ -33,6 +35,8 @@ $(document).ready(() => {
   const $inputSearch = $('.js-input-search')
   const $searchResults = $('.js-search-results')
   const $searchNoResults = $('.js-no-results')
+  const $toggleDarkMode = $('.js-toggle-darkmode')
+  const currentSavedTheme = localStorage.getItem('theme')
 
   let fuse = null
   let submenuIsOpen = false
@@ -99,11 +103,13 @@ $(document).ready(() => {
   }
 
   $openMenu.click(() => {
+    $header.addClass('mobile-menu-opened')
     $menu.addClass('opened')
     toggleScrollVertical()
   })
 
   $closeMenu.click(() => {
+    $header.removeClass('mobile-menu-opened')
     $menu.removeClass('opened')
     toggleScrollVertical()
   })
@@ -163,6 +169,16 @@ $(document).ready(() => {
     }
   })
 
+  $toggleDarkMode.change(() => {
+    if ($toggleDarkMode.is(':checked')) {
+      $('html').attr('data-theme', 'dark')
+      localStorage.setItem('theme', 'dark')
+    } else {
+      $('html').attr('data-theme', 'light')
+      localStorage.setItem('theme', 'light')
+    }
+  })
+
   $(window).click((e) => {
     if (submenuIsOpen) {
       if ($submenuOption && !$submenuOption.contains(e.target)) {
@@ -171,6 +187,18 @@ $(document).ready(() => {
       }
     }
   })
+
+  if (currentSavedTheme) {
+    $('html').attr('data-theme', currentSavedTheme)
+
+    if (currentSavedTheme === 'dark') {
+      $toggleDarkMode.attr('checked', true)
+    }
+  } else {
+    if (isDarkMode()) {
+      $toggleDarkMode.attr('checked', true)
+    }
+  }
 
   var headerElement = document.querySelector('.js-header')
 
@@ -186,13 +214,17 @@ $(document).ready(() => {
   }
 
   if ($recentArticles.length > 0) {
+    $recentArticles.on('init', function () {
+      shave('.js-recent-article-title', 50)
+    })
+
     $recentArticles.slick({
       adaptiveHeight: true,
       arrows: false,
       infinite: false,
       mobileFirst: true,
       variableWidth: true,
-      rtl: isRTL
+      rtl: isRTL()
     })
   }
 
@@ -213,6 +245,9 @@ $(document).ready(() => {
   observer.observe()
 
   tippy('.js-tooltip')
+
+  shave('.js-article-card-title', 100)
+  shave('.js-article-card-title-no-image', 250)
 
   trySearchFeature()
 })
