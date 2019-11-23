@@ -24,7 +24,7 @@ into the {body} of the default.hbs template --}}
 	  {{#get "tags"}}
 	  {{#foreach tags}}
 	  <h1>
-	  	<a href="{{url}}" style="font-size: 2.625rem;" class="bold">{{name}}</a><br>
+	  	<a href="{{url}}" style="font-size: 2.625rem;" class="neki bold m-tags">{{name}}</a><br>
 	  </h1>
 	  {{/foreach}}
 	  {{/get}}
@@ -33,6 +33,11 @@ into the {body} of the default.hbs template --}}
 </div>
 {{/post}}
 
+<style>
+  a:hover {
+    color: #008736;
+  }
+</style>
 {{!-- The #contentFor helper here will send everything inside it up to the matching #block helper found in default.hbs --}}
 {{#contentFor "scripts"}}
 <script defer src="{{asset "js/page.js"}}"></script>
