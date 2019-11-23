@@ -8,37 +8,28 @@ into the {body} of the default.hbs template --}}
 
 {{!-- Everything inside the #post tags pulls data from the post --}}
 {{#post}}
-<div class="main-wrap">
-	{{!--Special header.hbs partial to generate the <header> tag--}}
-	{{> header background=feature_image}}
-	{{!-- Inject styles of the hero image to make it responsive --}}
-	{{> hero background=feature_image}}
-	<div class="m-hero__content" data-aos="fade-down">
-		<h1 class="m-hero-title bigger">{{title}}</h1>
-		{{#if custom_excerpt}}
-		<p class="m-hero-description">{{custom_excerpt}}</p>
-		{{/if}}
-	</div>
-	</header>
-	<main>
-		<article>
-			<div class="l-content">
-				<div class="l-wrapper in-post" data-aos="fade-up" data-aos-delay="300">
-					<div class="l-post-content">
-						<div class="pos-relative js-post-content">
-							{{content}}
-
-							{{#get "tags"}}
-								{{#foreach tags}}
-									<a href="{{url}}" style="text-decoration: none; font-size: 2.625rem;" class="bold">{{name}}</a><br>
-								{{/foreach}}
-							{{/get}}
-						</div>
-					</div>
-				</div>
-			</div>
-		</article>
-	</main>
+  <div class="main-wrap">
+    {{!-- Special header.hbs partial to generate the <header> tag --}}
+    {{> header background=feature_image}}
+    {{!-- Inject styles of the hero image to make it responsive --}}
+    {{> hero background=feature_image}}
+    <div class="m-hero__content" data-aos="fade-down">
+      <h1 class="m-hero-title bigger" style="margin-bottom: 50px;">{{title}}</h1>
+      {{#if custom_excerpt}}
+      <p class="m-hero-description">{{custom_excerpt}}</p>
+      {{/if}}
+	  <hr style="margin-bottom: 50px;">
+	  {{content}}
+	  {{break-medium}}
+	  {{#get "tags"}}
+	  {{#foreach tags}}
+	  <h1>
+	  	<a href="{{url}}" style="font-size: 2.625rem;" class="bold">{{name}}</a><br>
+	  </h1>
+	  {{/foreach}}
+	  {{/get}}
+    </div>
+    </section>
 </div>
 {{/post}}
 
