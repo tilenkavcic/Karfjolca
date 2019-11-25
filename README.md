@@ -20,6 +20,7 @@ Custom ghost theme for karfjolca.si based on [liebling](https://github.com/eddie
 * Russian by [stereohorse](https://github.com/stereohorse)
 * Kyrgyz by [januchaos](https://github.com/januchaos)
 * Hebrew by [cohen604](https://github.com/cohen604)
+* Turkish by [mskoroglu](https://github.com/mskoroglu)
 
 ## Theme development
 
