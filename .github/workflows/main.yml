@@ -13,10 +13,18 @@ jobs:
       run: echo Zipping the theme
     - name: Zip the theme
       run: |
-        cd src/
         yarn install
         yarn dev
         yarn zip
-        cd ..
-        echo Done!
-        
+      working-directory: ./src
+    - name: Commit zip
+      run: |
+        git config --local user.email "action@github.com"
+        git config --local user.name "GitHub Action"
+        git add -f liebling.zip
+        git commit -m "Add most recent zip" liebling.zip
+      working-directory: ./ 
+    - name: Push changes
+      uses: ad-m/github-push-action@master
+      with:
+        github_token: ${{ secrets.GITHUB_TOKEN }}
