@@ -8,23 +8,7 @@ This header template is shared across all the pages.
   <header class="m-header js-header">
     {{/if}}
     {{!-- Cookie consent --}}
-    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-149255108-1"></script>
-    <link rel="stylesheet" type="text/css" href="/src/node_modules/cookies-eu-banner/css/cookies-eu-banner.default.css"/>
-    <script src="src/node_modules/cookies-eu-banner/dist/cookies-eu-banner.min.js"></script>
-    <div id="cookies-eu-banner" style="display: none; background: var(--background-color); color: var(--primary-foreground-color); padding: 0;">
-        Ta spletna stran uporablja piškotke za interno analitiko.
-        <a href="/zasebnost" class="m-button filled" id="cookies-eu-more" style="margin-right:5px">Preberi si več</a>
-        <button id="cookies-eu-reject" class="m-button" style="color:var(--primary-foreground-color); margin-right:5px">odkloni</button>
-        <button id="cookies-eu-accept" class="m-button filled" style="font-size: 18px; background: var(--primary-subtle-color); padding: 10px 10px 10px 10px; margin: 0;" >Se strinjam</button>
-    </div>
-    <script>
-        new CookiesEuBanner(function () {
-          window.dataLayer = window.dataLayer || [];
-          function gtag() { dataLayer.push(arguments); }
-          gtag('js', new Date());
-          gtag('config', 'UA-149255108-1');
-        }, true);
-    </script>
+    
     {{!-- <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/cookieconsent@3/build/cookieconsent.min.css" />
     <script src="https://cdn.jsdelivr.net/npm/cookieconsent@3/build/cookieconsent.min.js" data-cfasync="false"></script>
     <script>
@@ -45,7 +29,7 @@ This header template is shared across all the pages.
           "deny": "odkloni",
           "allow": "Se strinjam",
           "link": "Več o tem",
-          "href": "https://www.karfjolca.si/zasebnost"
+          "href": "https://www.karfjolca.si/privacy"
         },
         // Handle cookie rejection
         onInitialise: function (status) {

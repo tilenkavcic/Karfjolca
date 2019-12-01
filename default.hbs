@@ -46,6 +46,13 @@
   <body class="{{body_class}}">
     {{!-- All the main content gets inserted here, index.hbs, post.hbs, etc --}}
     {{{body}}}
+   
+    <div id="cookies-eu-banner">
+        Ta spletna stran uporablja piškotke za interno analitiko. 
+        <a href="/privacy" class="m-button filled" id="cookies-eu-more">Preberi si več</a>
+        <button id="cookies-eu-reject" class="m-button">odkloni</button>
+        <button id="cookies-eu-accept" class="m-button filled" >Se strinjam</button>
+    </div>
 
     {{!-- Search form --}}
     {{> search}}
@@ -65,5 +72,16 @@
 
     {{!-- Ghost outputs important scripts and data with this tag --}}
     {{ghost_foot}}
+    
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-149255108-1"></script>
+    <script src="src/node_modules/cookies-eu-banner/dist/cookies-eu-banner.min.js"></script>
+    <script>
+        new CookiesEuBanner(function () {
+          window.dataLayer = window.dataLayer || [];
+          function gtag() { dataLayer.push(arguments); }
+          gtag('js', new Date());
+          gtag('config', 'UA-149255108-1');
+        }, true);
+    </script>
   </body>
 </html>
