@@ -24,15 +24,15 @@ into the {body} of the default.hbs template --}}
     <article>
       <div class="l-content">
         <div class="l-wrapper in-post" data-aos="fade-up" data-aos-delay="300">
+          <p class="align-center">
+            <button id="cookies-turn-off" class="m-button filled">Odkloni piškotke</button>
+            <button id="cookies-turn-on" class="m-button filled"
+              style="background: var(--primary-subtle-color); color: var(--background-color);">
+              Strinjam se z uporabo piškotkov</button>
+          </p>
+          <br>
           <div class="l-post-content">
             <div class="pos-relative js-post-content">
-              <p class="align-center">
-                <button id="cookies-turn-off" class="m-button filled">Odkloni piškotke</button>
-                <br>
-                <button id="cookies-turn-on" class="m-button filled"
-                  style="background: var(--primary-subtle-color); color: var(--background-color);">
-                  Strinjam se z uporabo piškotkov</button>
-              </p>
               {{content}}
             </div>
           </div>
