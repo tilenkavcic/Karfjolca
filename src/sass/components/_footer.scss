@@ -7,12 +7,11 @@
   color: $white;
   text-align: center;
   padding: 30px $mobile-space;
-  margin-bottom: $mobile-space;
 
   @include respond-to('medium') {
     padding: 70px 0;
     max-width: 330px;
-    margin: $mobile-space auto;
+    margin: 0 auto;
   }
 }
 
@@ -20,7 +19,7 @@
   font-size: 0.875rem;
   letter-spacing: 0.3px;
   line-height: 1.75rem;
-  margin-bottom: 0;
+  margin-bottom: $mobile-space;
 
   span {
     display: block;
@@ -68,6 +67,8 @@
 }
 
 #cookies-eu-banner {
+  display: none;
+  
   background-color: var(--background-color); 
   color: var(--primary-foreground-color); 
   padding: 10px;
@@ -87,8 +88,10 @@
   font-size: 16px;
 }
 
-#cookies-eu-more {
-  margin-left: 20px;
+#cookies-eu-text {
+  @include respond-to('medium') {
+    margin-right: 20px;
+  }
 }
 
 #cookies-eu-reject {
@@ -97,8 +100,25 @@
 }
 
 #cookies-eu-accept {
+  font-weight: bold;
   font-size: 18px; 
+  color: var(--background-color);
   background: var(--primary-subtle-color); 
   padding: 10px 10px 10px 10px; 
   margin: 0;
+}
+
+#cookies-eu-more:hover,
+#cookies-eu-more:focus,
+#cookies-eu-accept:hover,
+#cookies-eu-accept:focus {
+  background: #fff;
+  color: #222;
+}
+
+#cookies-eu-reject:hover,
+#cookies-eu-reject:focus {
+  border-color: #fff;
+  background: #222;
+  color: #fff;
 }
