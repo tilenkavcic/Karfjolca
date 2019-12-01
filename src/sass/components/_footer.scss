@@ -7,11 +7,12 @@
   color: $white;
   text-align: center;
   padding: 30px $mobile-space;
+  margin-bottom: $mobile-space;
 
   @include respond-to('medium') {
     padding: 70px 0;
     max-width: 330px;
-    margin: 0 auto;
+    margin: $mobile-space auto;
   }
 }
 
@@ -19,7 +20,7 @@
   font-size: 0.875rem;
   letter-spacing: 0.3px;
   line-height: 1.75rem;
-  margin-bottom: $mobile-space;
+  margin-bottom: 0;
 
   span {
     display: block;
