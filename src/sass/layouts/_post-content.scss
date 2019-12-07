@@ -258,7 +258,7 @@
     position: relative;
     margin: 30px 0;
     border: 0;
-    border-top: 1px solid var(--secondary-subtle-color);
+    border-top: 1px solid var(--hr-color);
 
     @include respond-to('medium') {
       margin: 50px 0;
@@ -272,7 +272,7 @@
       width: 10px;
       height: 10px;
       border-radius: 50%;
-      background-color: var(--secondary-subtle-color);
+      background-color: var(--hr-color);
       @include bs(0 0 0 10px var(--background-color));
       @include transform(translate(-50%,-50%));
 

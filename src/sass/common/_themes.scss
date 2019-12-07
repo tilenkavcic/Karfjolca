@@ -19,6 +19,7 @@
   --toggle-darkmode-button-color: #fff;
   --table-background-color-odd: #fafafa;
   --table-head-border-bottom: #e2e2e2;
+  --hr-color: #86c58f;
 }
 
 [data-theme="dark"] {
@@ -41,6 +42,7 @@
   --toggle-darkmode-button-color: #efd114;
   --table-background-color-odd: #050505;
   --table-head-border-bottom: #1d1d1d;
+  --hr-color: #004d00;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -64,5 +66,6 @@
     --toggle-darkmode-button-color: #efd114;
     --table-background-color-odd: #050505;
     --table-head-border-bottom: #1d1d1d;
+    --hr-color: #004d00;
   }
 }
