@@ -1,8 +1,19 @@
 # Karfjolca ghost theme
 
-Custom ghost theme for karfjolca.si based on [liebling](https://github.com/eddiesigner/liebling).
+Custom ghost theme for [karfjolca.si](https://karfjolca.si) based on [liebling](https://github.com/eddiesigner/liebling).
 
-## Localization
+## Credits
+
+### Theme
+
+[Eduardo Gómez](https://github.com/eddiesigner). Released under the [MIT
+license](https://github.com/eddiesigner/liebling/blob/master/LICENSE).
+
+### Development environment
+
+[D3473R](https://github.com/D3473R) for creating a development environment with Docker.
+
+### Localization
 
 * English
 * Spanish
@@ -21,23 +32,3 @@ Custom ghost theme for karfjolca.si based on [liebling](https://github.com/eddie
 * Kyrgyz by [januchaos](https://github.com/januchaos)
 * Hebrew by [cohen604](https://github.com/cohen604)
 * Turkish by [mskoroglu](https://github.com/mskoroglu)
-
-## Theme development
-
-Thanks to [D3473R](https://github.com/D3473R) 💪🏼 for create a development environment with Docker. From now on you can work on this theme without installing a Ghost instance on your local machine. With two commands you have an instant development setup and you can build the theme for production.
-
-Please take a look to this page to see how it works: https://github.com/eddiesigner/liebling/wiki/Theme-development-with-Docker
-
-## Help and Support
-
-To enable the search, comments, subscribers and so on, you must follow the steps found in the [Wiki](https://github.com/eddiesigner/liebling/wiki).
-
-## License
-
-Copyright (c) 2018-2019 Eduardo Gómez. Released under the [MIT license](https://github.com/eddiesigner/liebling/blob/master/LICENSE).
-
-<a href="https://www.buymeacoffee.com/eddiesigner" target="_blank"><img src="https://www.buymeacoffee.com/assets/img/custom_images/black_img.png" alt="Buy Me A Coffee" style="height: auto !important;width: auto !important;" ></a>
-
-## Credits
-
-All photos used on this theme are from [Unsplash](https://unsplash.com)
