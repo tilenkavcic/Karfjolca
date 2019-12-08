@@ -6,65 +6,7 @@ This header template is shared across all the pages.
 <header class="m-header with-picture js-header">
   {{else}}
   <header class="m-header js-header">
-    {{/if}}
-    {{!-- Cookie consent --}}
-    
-    {{!-- <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/cookieconsent@3/build/cookieconsent.min.css" />
-    <script src="https://cdn.jsdelivr.net/npm/cookieconsent@3/build/cookieconsent.min.js" data-cfasync="false"></script>
-    <script>
-      window.cookieconsent.initialise({
-        "palette": {
-          "popup": {
-            "background": "#008736"
-          },
-          "button": {
-            "background": "#f1d600"
-          }
-        },
-        "theme": "edgeless",
-        "position": "top-right",
-        "type": "opt-in",
-        "content": {
-          "message": "Ta spletna stran uporablja piškotke za interno analitiko.",
-          "deny": "odkloni",
-          "allow": "Se strinjam",
-          "link": "Več o tem",
-          "href": "https://www.karfjolca.si/privacy"
-        },
-        // Handle cookie rejection
-        onInitialise: function (status) {
-          var didConsent = this.hasConsented();
-          if (didConsent) {
-            window.dataLayer = window.dataLayer || [];
-            function gtag() { dataLayer.push(arguments); }
-            gtag('js', new Date());
-            gtag('config', 'UA-149255108-1');
-          }
-          else {
-            window.dataLayer = window.dataLayer || [];
-            window['ga-disable-UA-149255108-1'] = true;
-          }
-        },
-        onStatusChange: function (status, chosenBefore) {
-          var didConsent = this.hasConsented();
-          if (didConsent) {
-            window.dataLayer = window.dataLayer || [];
-            function gtag() { dataLayer.push(arguments); }
-            gtag('js', new Date());
-            gtag('config', 'UA-149255108-1');
-          }
-          else {
-            window.dataLayer = window.dataLayer || [];
-            window['ga-disable-UA-149255108-1'] = true;
-          }
-        },
-        onRevokeChoice: function () {
-            window.dataLayer = window.dataLayer || [];
-            window['ga-disable-UA-149255108-1'] = true;
-        }
-      });
-    </script> --}}
-
+  {{/if}}
   <div class="m-mobile-topbar" data-aos="fade-down">
     <button class="m-icon-button in-mobile-topbar js-open-menu" aria-label="Open menu">
       <span class="icon-menu"></span>
