@@ -1,0 +1,58 @@
+#cookies-eu-banner {
+	display: none;
+	background-color: var(--background-color);
+	color: var(--primary-foreground-color);
+	padding: 10px;
+	font-size: 16px;
+	position: fixed;
+	bottom: 0;
+	width: 100%;
+	z-index: 100;
+	text-align: center;
+
+	#cookies-eu-text {
+		@include respond-to("medium") {
+			margin-right: 20px;
+		}
+	}
+
+	#cookies-eu-more,
+	#cookies-eu-reject,
+	#cookies-eu-accept {
+		margin: 0 5px 0 5px;
+		padding: 7px 10px;
+		border: none;
+		font-size: 16px;
+	}
+
+	#cookies-eu-more {
+		color: var(--primary-foreground-color);
+		padding: 7px 7px;
+	}
+
+	#cookies-eu-more:hover,
+	#cookies-eu-more:focus {
+		border-color: #fff;
+		background: #222;
+		color: #fff;
+	}
+
+	#cookies-eu-reject {
+		margin: 7px 7px;
+	}
+
+	#cookies-eu-accept {
+		font-weight: bold;
+		font-size: 18px;
+		color: var(--background-color);
+		background: var(--primary-subtle-color);
+		padding: 10px 10px 10px 10px;
+		margin: 0;
+	}
+
+	#cookies-eu-accept:hover,
+	#cookies-eu-accept:focus {
+		background: #fff;
+		color: #222;
+	}
+}
