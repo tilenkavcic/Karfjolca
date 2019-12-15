@@ -27,8 +27,9 @@ into the {body} of the default.hbs template --}}
           <p class="align-center">
             <button id="cookies-turn-off" class="m-button filled">Odkloni piškotke</button>
             <button id="cookies-turn-on" class="m-button filled"
-              style="background: var(--primary-subtle-color); color: var(--background-color);">
-              Strinjam se z uporabo piškotkov</button>
+              style="background: var(--primary-subtle-color); color: var(--background-color); margin: 10px;">
+              Strinjam se z uporabo piškotkov
+            </button>
           </p>
           <br>
           <div class="l-post-content">
@@ -46,14 +47,14 @@ into the {body} of the default.hbs template --}}
 <script>
   document.getElementById("cookies-turn-off").onclick = function (e) {
     window.dataLayer = window.dataLayer || [];
-    function gtag() { dataLayer.push(arguments); }
-    gtag('js', new Date());
-    gtag('config', 'UA-149255108-1');
+    window['ga-disable-UA-149255108-1'] = true;
     alert("Piškote smo izklopili");
   };
   document.getElementById("cookies-turn-on").onclick = function (e) {
     window.dataLayer = window.dataLayer || [];
-    window['ga-disable-UA-149255108-1'] = true;
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+    gtag('config', 'UA-149255108-1');
     alert("Hvala za vaše zaupanje");
   };
 </script>
