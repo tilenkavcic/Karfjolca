@@ -4,6 +4,19 @@ This footer template is shared across all the pages.
 
 <footer class="m-footer">
   <div class="m-footer__content">
+
+    <p class="m-footer-logo m-footer-copyright">
+      {{#if @site.logo}}
+      <a href="{{@site.url}}">
+        <img src="{{@site.logo}}" alt="{{@site.title}}">
+      </a>
+      {{else}}
+      <a href="{{@site.url}}" class="m-site-name">
+        {{@site.title}}
+      </a>
+      {{/if}}
+    </p>
+    
     <nav class="m-footer-social">
       <a href="https://www.instagram.com/karfjolca.si/" target="_blank" rel="noopener" aria-label="Instagram">
         <span class="icon-instagram"></span>

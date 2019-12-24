@@ -3,6 +3,12 @@
   background-color: var(--footer-background-color);
 }
 
+.m-footer-logo {
+  img {
+    filter: invert(100%);
+  }
+}
+
 .m-footer__content {
   color: $white;
   text-align: center;
