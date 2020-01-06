@@ -45,7 +45,7 @@ into the {body} of the default.hbs template --}}
                     <span class="icon-print"></span>
                 </a>
                 <span class="m-heading__meta__divider">&bull;</span>
-                <span class="m-heading__meta__time">{{date published_at}}</span>
+                <span class="m-heading__meta__time">{{date published_at format="DD. MMMM YYYY"}}</span>
               </div>
             </header>
             <div class="pos-relative js-post-content">
@@ -74,7 +74,7 @@ into the {body} of the default.hbs template --}}
         </div>
         
         {{!-- Email subscribe form at the bottom of the page --}}
-        <section class="m-subscribe-section">	          
+        {{!-- <section class="m-subscribe-section">	          
           <div class="l-wrapper in-post">	       
             <div class="m-subscribe-section__content">	        
               <div class="m-subscribe-section__text">	
@@ -88,7 +88,11 @@ into the {body} of the default.hbs template --}}
               </div>	
             </div>	
           </div>	
-        </section>	
+        </section>	 --}}
+        
+        <div class="l-wrapper in-post align-center">
+          <iframe width="100%" height="320" src="https://karfjolca.substack.com/embed" frameborder="0" scrolling="no"></iframe>       
+        </div>
 
         {{#if @labs.subscribers}}
         <section class="m-author">
