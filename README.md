@@ -32,3 +32,6 @@ license](https://github.com/eddiesigner/liebling/blob/master/LICENSE).
 * Kyrgyz by [januchaos](https://github.com/januchaos)
 * Hebrew by [cohen604](https://github.com/cohen604)
 * Turkish by [mskoroglu](https://github.com/mskoroglu)
+* Romanian by [dsecareanu](https://github.com/dsecareanu)
+* Chinese Simplified by [IvyB](https://github.com/IvyB)
+* Indonesian by [iqbalbinsb](https://github.com/iqbalbinsb)

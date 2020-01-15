@@ -22,9 +22,13 @@ mix.js('js/helpers.js', 'js/')
   .js('js/post.js', 'js/')
   .js('js/page.js', 'js/')
   .extract()
-  .sass('sass/app.scss', 'css/')
-  .setPublicPath('../assets')
   .setResourceRoot('/assets')
+  .setPublicPath('../assets')
+  .sass('sass/app.scss', 'css/')
+  .options({
+    processCssUrls: false
+  })
+  .copy('sass/fonts/icomoon/*.*', '../assets/fonts/')
   .browserSync({
     proxy: "localhost:2368",
     files: [
