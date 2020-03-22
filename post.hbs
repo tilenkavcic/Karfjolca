@@ -9,11 +9,11 @@ into the {body} of the default.hbs template --}}
 <div class="main-wrap">
   {{!-- Everything inside the #post tags pulls data from the post --}}
   {{#post}}
-  {{!-- Special header.hbs partial to generate the <header> tag --}}
-  {{> header background=feature_image}}
-  {{!-- Inject styles of the hero image to make it responsive --}}
-  {{> hero background=feature_image}}
-  </section>
+    {{!-- Special header.hbs partial to generate the <header> tag --}}
+    {{> header background=feature_image}}
+    {{!-- Inject styles of the hero image to make it responsive --}}
+    {{> hero background=feature_image}}
+    </section>
   {{/post}}
   
   <main>
@@ -22,11 +22,7 @@ into the {body} of the default.hbs template --}}
         {{!-- Everything inside the #post tags pulls data from the post --}}
         {{#post}}
         <div class="l-wrapper in-post {{#unless feature_image}}no-image{{/unless}} js-aos-wrapper" data-aos="fade-up" data-aos-delay="300">
-          {{#if @labs.subscribers}}
-          <div class="l-post-content has-subscribe-form js-progress-content">
-            {{else}}
-            <div class="l-post-content js-progress-content">
-              {{/if}}
+          <div class="l-post-content {{#if @labs.subscribers}}has-subscribe-form{{/if}} {{#if @labs.members}}has-subscribe-form{{/if}} js-progress-content">
               <header class="m-heading">
                 <h1 class="m-heading__title in-post">{{title}}</h1>
                 <div class="m-heading__meta">
@@ -68,125 +64,116 @@ into the {body} of the default.hbs template --}}
                   </button>
                 </div>
               </div>
-              {{content}}
+                {{content}}
             </div>
           </div>
-        </div>
-        
-        {{!-- Email subscribe form at the bottom of the page --}}
-        {{!-- <section class="m-subscribe-section">	          
-          <div class="l-wrapper in-post">	       
-            <div class="m-subscribe-section__content">	        
-              <div class="m-subscribe-section__text">	
-                <h4 class="m-subscribe-section__title">{{t "Subscribe to our newsletter"}}</h4>	
-                <p class="m-subscribe-section__description">	
-                  {{t "Get the latest posts delivered right to your inbox."}}	
-                </p>	
-              </div>	
-              <div class="m-subscribe-section__form">
-                <a class="m-button primary block" id="subscribe_button" href="https://karfjolca.substack.com/subscribe?">Naroči se tukaj!<a/>
-              </div>	
-            </div>	
-          </div>	
-        </section>	 --}}
-        
-        <div class="l-wrapper in-post align-center" style="background-color: #ffffffd5; border-radius: 12px;" >
-          <iframe src="https://karfjolca.substack.com/embed" loading="lazy" width="100%" height="320" frameborder="0" scrolling="no" ></iframe>       
-        </div>
-
-        {{#if @labs.subscribers}}
-        <section class="m-author">
-        {{else}}
-        <section class="m-author">
-        {{/if}}
-          <div class="m-author__content">
-            <div class="m-author__picture">
-              <a href="{{primary_author.url}}" class="m-author-picture" aria-label="Author picture">
-                {{#if primary_author.profile_image}}
-                <div style="background-image: url({{primary_author.profile_image}});"></div>
-                {{else}}
-                <div style="background-image: url({{asset "images/default-avatar-square-small.jpg"}});"></div>
+          {{!-- Email subscribe form at the bottom of the page --}}
+          {{#if @labs.subscribers}}
+            <section class="m-subscribe-section">
+              <div class="l-wrapper in-post">
+                <div class="m-subscribe-section__content">
+                  <div class="m-subscribe-section__text">
+                    <h4 class="m-subscribe-section__title">{{t "Subscribe to our newsletter"}}</h4>
+                    <p class="m-subscribe-section__description">
+                      {{t "Get the latest posts delivered right to your inbox."}}
+                    </p>
+                  </div>
+                  <div class="m-subscribe-section__form">
+                    {{subscribe_form
+                            form_id="subscribe-form"
+                            form_class="m-subscribe-section__form"
+                            input_id="subscribe_input"
+                            input_class="m-input in-subscribe-section"
+                            button_id="subscribe_button"
+                            button_class="m-button primary block"
+                            placeholder=(t "Your email address")
+                          }}
+                  </div>
+                </div>
+              </div>
+            </section>
+          {{/if}}
+          {{#if @labs.members}}
+            <section class="m-subscribe-section">
+              <div class="l-wrapper in-post">
+                <div class="m-subscribe-section__content">
+                  <div class="m-subscribe-section__text">
+                    <h4 class="m-subscribe-section__title">{{t "Subscribe to our newsletter"}}</h4>
+                    <p class="m-subscribe-section__description">
+                      {{t "Get the latest posts delivered right to your inbox."}}
+                    </p>
+                  </div>
+                  <div class="m-subscribe-section__form">
+                    {{> "newsletter-form"}}
+                  </div>
+                </div>
+              </div>
+            </section>
+          {{/if}}
+          <section class="m-author">
+            <div class="m-author__content">
+              <div class="m-author__picture">
+                <a href="{{primary_author.url}}" class="m-author-picture" aria-label="Author picture">
+                  {{#if primary_author.profile_image}}
+                    <div style="background-image: url({{primary_author.profile_image}});"></div>
+                  {{else}}
+                    <div style="background-image: url({{asset "images/default-avatar-square-small.jpg"}});"></div>
+                  {{/if}}
+                </a>
+              </div>
+              <div class="m-author__info">
+                <h4 class="m-author__name">
+                  <a href="{{primary_author.url}}">{{primary_author.name}}</a>
+                </h4>
+                {{#has author="count:>1"}}
+                  <p class="m-small-text in-author-along-with">
+                    {{authors separator=", " prefix=(t "Among with no break line") from="2"}}
+                  </p>
+                {{/has}}
+                {{#if primary_author.bio}}
+                  <p class="m-author__bio">{{primary_author.bio}}</p>
                 {{/if}}
-              </a>
-            </div>
-            <div class="m-author__info">
-              <h4 class="m-author__name">
-                <a href="{{primary_author.url}}">{{primary_author.name}}</a>
-              </h4>
-              {{#has author="count:>1"}}
-              <p class="m-small-text in-author-along-with">
-                {{authors separator=", " prefix=(t "Among with no break line") from="2"}}
-              </p>
-              {{/has}}
-              {{#if primary_author.bio}}
-              <p class="m-author__bio">{{primary_author.bio}}</p>
-              {{/if}}
-              <ul class="m-author-links">
-                {{#if primary_author.website}}
-                <li>
-                  <a href="{{primary_author.website}}" target="_blank" rel="noopener" aria-label="Website">
-                    <span class="icon-globe"></span>
-                  </a>
-                </li>
-                {{/if}}
-                {{#if primary_author.facebook}}
-                <li>
-                  <a href="https://facebook.com/{{primary_author.facebook}}" target="_blank" rel="noopener" aria-label="Facebook">
-                    <span class="icon-facebook"></span>
-                  </a>
-                </li>
-                {{/if}}
-                {{#if primary_author.twitter}}
-                <li>
-                  <a href="https://twitter.com/{{primary_author.twitter}}" target="_blank" rel="noopener" aria-label="Twitter">
-                    <span class="icon-twitter"></span>
-                  </a>
-                </li>
-                {{/if}}
-              </ul>
-            </div>
-          </div>
-        </section>
-        {{!-- If you want to embed comments, this is a good place to do it! --}}
-        {{!--
-          <section class="m-comments">
-            <div class="m-load-comments">
-              <div class="m-load-comments__line"></div>
-              <button class="m-icon-button filled as-load-comments js-tooltip js-load-comments" data-tippy-content="Load comments">
-                <span class="icon-comments"></span>
-              </button>
-            </div>
-            <div class="m-load-comments__iframe l-wrapper in-comments js-comments-iframe">
-              <div id="disqus_thread"></div>
-              <script>
-                var disqus_config = function () {
-                  this.page.url = "{{url absolute="true"}}";
-                  this.page.identifier = "ghost-{{comment_id}}"
-                };
-                (function () {
-                  var d = document, s = d.createElement('script');
-                  s.src = 'https://CHANGETHIS.disqus.com/embed.js';
-                  s.setAttribute('data-timestamp', +new Date());
-                  (d.head || d.body).appendChild(s);
-                })();
-              </script>
+                <ul class="m-author-links">
+                  {{#if primary_author.website}}
+                    <li>
+                      <a href="{{primary_author.website}}" target="_blank" rel="noopener" aria-label="Website">
+                        <span class="icon-globe"></span>
+                      </a>
+                    </li>
+                  {{/if}}
+                  {{#if primary_author.facebook}}
+                    <li>
+                      <a href="https://facebook.com/{{primary_author.facebook}}" target="_blank" rel="noopener" aria-label="Facebook">
+                        <span class="icon-facebook"></span>
+                      </a>
+                    </li>
+                  {{/if}}
+                  {{#if primary_author.twitter}}
+                    <li>
+                      <a href="https://twitter.com/{{primary_author.twitter}}" target="_blank" rel="noopener" aria-label="Twitter">
+                        <span class="icon-twitter"></span>
+                      </a>
+                    </li>
+                  {{/if}}
+                </ul>
+              </div>
             </div>
           </section>
-          --}}
+          
         {{/post}}
         {{!-- Related posts --}}
         {{#get "posts" limit="3" filter="tags:[{{post.tags}}]+id:-{{post.id}}" include="tags,authors" as |related|}}
-        <section class="m-recommended">
-          <div class="l-wrapper in-recommended">
-            <h3 class="m-section-title in-recommended">{{t "Recommended for you"}}</h3>
-            <div class="m-recommended-articles">
-              <div class="m-recommended-slider js-recommended-articles">
-                {{!-- The tag below iterates over all the related posts --}}
-                {{> "loop"}}
+          <section class="m-recommended">
+            <div class="l-wrapper in-recommended">
+              <h3 class="m-section-title in-recommended">{{t "Recommended for you"}}</h3>
+              <div class="m-recommended-articles">
+                <div class="m-recommended-slider js-recommended-articles">
+                  {{!-- The tag below iterates over all the related posts --}}
+                  {{> "loop"}}
+                </div>
               </div>
             </div>
-          </div>
-        </section>
+          </section>
         {{/get}}
       </div>
     </article>

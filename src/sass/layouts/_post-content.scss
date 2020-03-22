@@ -386,6 +386,10 @@
         padding: 20px;
       }
     }
+
+    &.line-numbers > code {
+      padding: 0;
+    }
   }
 
   form {
