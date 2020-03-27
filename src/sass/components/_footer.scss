@@ -4,7 +4,13 @@
 }
 
 .m-footer-logo {
+  font-size: 3rem;
+  font-weight: 600;
+  letter-spacing: 2px;
+  margin-bottom: 30px;
+  
   img {
+    width: 40%;
     filter: invert(100%);
   }
 }
@@ -25,7 +31,6 @@
   font-size: 0.875rem;
   letter-spacing: 0.3px;
   line-height: 1.75rem;
-  margin-bottom: $mobile-space;
 
   span {
     display: block;
@@ -52,7 +57,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  margin-bottom: 20px;
+  margin-bottom: $mobile-space;
 
   a {
     display: inline-block;
