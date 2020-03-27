@@ -12,11 +12,13 @@
 }
 
 .m-heading__meta__tag,
-.m-heading__meta__time {
+.m-heading__meta__time,
+.m-heading__meta__print {
   color: var(--link-color) !important;
 }
 
-.m-heading__meta__tag {
+.m-heading__meta__tag,
+.m-heading__meta__print {
   text-decoration: none !important;
 }
 
