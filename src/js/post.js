@@ -110,6 +110,7 @@ $(document).ready(() => {
   const $loadComments = $('.js-load-comments')
   const $commentsIframe = $('.js-comments-iframe')
   const $recommendedArticles = $('.js-recommended-articles')
+  const $prinButton = $('.m-heading__meta__print')
 
   fitvids('.js-post-content')
 
@@ -171,6 +172,11 @@ $(document).ready(() => {
     $loadComments.parent().hide()
     $commentsIframe.fadeIn('slow')
   })
+
+  // $prinButton.click(() => {
+  //   $(document).ready(() => {
+  //   })
+  // })
 
   $('.js-post-content').find('img').each(function() {
     if (!$(this).closest('figure').hasClass('kg-bookmark-card')) {
