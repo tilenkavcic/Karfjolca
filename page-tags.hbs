@@ -7,32 +7,61 @@
   {{!-- Inject styles of the hero image to make it responsive --}}
   {{> hero background=feature_image}}
   <div class="m-hero__content" data-aos="fade-down">
-    <h1 class="m-hero-title bigger" style="margin-bottom: 50px;">{{title}}</h1>
+    <h1 class="m-hero-title bigger">{{title}}</h1>
     {{#if custom_excerpt}}
     <p class="m-hero-description">{{custom_excerpt}}</p>
     {{/if}}
-    <hr style="margin-bottom: 50px;">
-    {{content}}
-    {{break-medium}}
-    {{#get "tags"}}
-    {{#foreach tags}}
-    <h1>
-      <a href="{{url}}" style="font-size: 2.625rem;" class="bold m-tags">{{name}}</a><br>
-    </h1>
-    {{/foreach}}
-    {{/get}}
   </div>
+  </section>
 
+  <main>
+    <article>
+      <div class="l-content">
+        <div class="l-wrapper in-post" data-aos="fade-up" data-aos-delay="300">
+          <div class="l-post-content">
+            <div class="pos-relative js-post-content">
+              {{content}}
+              {{break-medium}}
+
+              <ul>
+                {{#get "tags"}}
+                {{#foreach tags}}
+                <h1>
+                  <li><a href="{{url}}" class="bold m-tag">{{name}}</a></li>
+                </h1>
+                {{/foreach}}
+                {{/get}}
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </article>
+  </main>
 </div>
 {{/post}}
 
 <style>
-  .m-hero.with-picture {
-    min-height: 1000px;
+  main {
+    margin-top: 25px;
+    margin-left: 25px;
+  }
+  .m-tag {
+    color: #ffffff !important;
+    align-items: center !important;
+    text-decoration: none !important;
+  }
+
+  li {
+    color: #ffffff;
   }
 
   a:hover {
-    color: #008736;
+    color: #000000 !important;
+  }
+
+  body {
+    background-color: #141312;
   }
 
 </style>
