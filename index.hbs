@@ -22,6 +22,8 @@ into the {body} of the default.hbs template --}}
     {{/if}}
     {{#if @labs.members}}
       <a href="{{@site.url}}/newsletter" class="m-button filled">{{t "Subscribe"}}</a>
+    {{else}}
+      <a href="https://karfjolca.substack.com/subscribe?" class="m-button filled">{{t "Subscribe"}}</a>
     {{/if}}
   </div>
   </section>

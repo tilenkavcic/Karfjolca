@@ -44,9 +44,9 @@
     {{!-- This script loads the Google font asynchronously --}}
     <script>
       // @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&dn=expat.txt Expat
-      WebFontConfig = {
-        google: { families: ['Source+Sans+Pro:400,600,700&display=swap'] }
-      };
+      //WebFontConfig = {
+      //  google: { families: ['Source+Sans+Pro:400,600,700&display=swap'] }
+      //};
 
       (function (d) {
         var wf = d.createElement('script'), s = d.scripts[0];
@@ -226,7 +226,6 @@
           // Delays removal of banner allowing developers to specify their own transition effects
           removeBanner: function (wait) {
             //banner.style.display = 'block';
-            console.log("asd");
             document.getElementById('cookies-eu-banner').remove();
           }
         };
